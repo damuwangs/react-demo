@@ -1,24 +1,106 @@
-/*
- * @Description: 
- * @Autor: 王成阳
- * @Date: 2021-10-28 14:35:33
- */
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom';
-import './App.css';
-import Test from './test';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function App() {
+const routes = [
+  {
+    path: "/sandwiches",
+    component: Sandwiches
+  },
+  {
+    path: "/tacos",
+    component: Tacos,
+    routes: [
+      {
+        path: "/tacos/bus",
+        component: Bus
+      },
+      {
+        path: "/tacos/cart",
+        component: Cart
+      }
+    ]
+  }
+];
+
+export default function RouteConfigExample() {
   return (
-    <div className="App">
-      <Test/>
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/tacos">Tacos</Link>
+          </li>
+          <li>
+            <Link to="/sandwiches">Sandwiches</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          {routes.map((route, i) => (
+            <RouteWithSubRoutes key={i} {...route} />
+          ))}
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+// A special wrapper for <Route> that knows how to
+// handle "sub"-routes by passing them in a `routes`
+// prop to the component it renders.
+function RouteWithSubRoutes(route) {
+  return (
+    <Route
+      path={route.path}
+      render={props => (
+        // pass the sub-routes down to keep nesting
+        <route.component {...props} routes={route.routes} />
+      )}
+    />
+  );
+}
+
+function Sandwiches() {
+  return <h2>Sandwiches</h2>;
+}
+
+function Tacos({ routes }) {
+  return (
+    <div>
+      <h2>Tacos</h2>
+      <ul>
+        <li>
+          <Link to="/tacos/bus">Bus</Link>
+        </li>
+        <li>
+          <Link to="/tacos/cart">Cart</Link>
+        </li>
+      </ul>
+
+      <Switch>
+        {routes.map((route, i) => (
+          <RouteWithSubRoutes key={i} {...route} />
+        ))}
+      </Switch>
     </div>
-  )
+  );
+}
+
+function Bus() {
+  return <h3>Bus</h3>;
+}
+
+function Cart() {
+  return <h3>Cart</h3>;
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <RouteConfigExample />,
   document.getElementById('root')
 );
