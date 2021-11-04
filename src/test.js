@@ -1,33 +1,74 @@
 import react from "react"
+import { Link, Switch } from "react-router-dom"
+import { RouteWithSubRoutes } from "./route"
 import { ThemeContext, themes } from "./theme-context"
 import ThemeButton from "./themed-button"
-
 /*
  * @Description: 
  * @Autor: 王成阳
  * @Date: 2021-10-28 15:05:11
  */
-class Test extends react.Component{
-  constructor(props){
-    super(props)
-    this.toggleTheme = () => {
-      this.setState( (state) => ({
-        theme: state.theme === themes.dark ? themes.light : themes.dark
-      }))
-    }
+class Test extends react.Component {
+	constructor(props) {
+		super(props)
+		this.toggleTheme = () => {
+			this.setState((state) => ({
+				theme: state.theme === themes.dark ? themes.light : themes.dark
+			}))
+		}
 
-    this.state = {
-      theme: themes.light,
-      toggleTheme: this.toggleTheme      
-    }
-  }
-  render(){
-    return (
-      <ThemeContext.Provider value={this.state}>
-        <ThemeButton/>
-      </ThemeContext.Provider>
-    )
-  }
+		this.state = {
+			theme: themes.light,
+			toggleTheme: this.toggleTheme
+		}
+	}
+	render() {
+		return (
+			<ThemeContext.Provider value={this.state}>
+				<ThemeButton /> 
+			</ThemeContext.Provider>
+		)
+	}
 }
 
-export default Test
+function Tacos({ routes }) {
+    return (
+        <div>
+            <h2>Tacos</h2>
+            <ul>
+                <li>
+                    <Link to="/tacos/bus">Bus</Link>
+                </li>
+                <li>
+                    <Link to="/tacos/cart">Cart</Link>
+                </li>
+            </ul>
+
+            <Switch>
+                {routes.map((route, i) => (
+                    <RouteWithSubRoutes key={i} {...route} />
+                    ))}
+            </Switch>
+        </div>
+    );
+}
+
+function Bus() {
+    return <h3>Bus</h3>;
+}
+
+function Cart() {
+    return <h3>Cart</h3>;
+}
+
+function Sandwiches() {
+    return <h2>Sandwiches</h2>;
+}
+
+export {
+	Test,
+	Tacos,
+	Bus,
+	Cart,
+	Sandwiches
+}
