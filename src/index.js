@@ -1,3 +1,8 @@
+/*
+ * @Description: 
+ * @Autor: 王成阳
+ * @Date: 2021-10-28 14:35:33
+ */
 import React from "react";
 import ReactDOM from 'react-dom';
 import {
@@ -7,28 +12,9 @@ import {
   Link
 } from "react-router-dom";
 
-const routes = [
-  {
-    path: "/sandwiches",
-    component: Sandwiches
-  },
-  {
-    path: "/tacos",
-    component: Tacos,
-    routes: [
-      {
-        path: "/tacos/bus",
-        component: Bus
-      },
-      {
-        path: "/tacos/cart",
-        component: Cart
-      }
-    ]
-  }
-];
+import routes from "./config/router";
 
-export default function RouteConfigExample() {
+export default function App() {
   return (
     <Router>
       <div>
@@ -41,19 +27,16 @@ export default function RouteConfigExample() {
           </li>
         </ul>
 
-        <Switch>
+        {/* <Switch>
           {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />
           ))}
-        </Switch>
+        </Switch> */}
       </div>
     </Router>
   );
 }
 
-// A special wrapper for <Route> that knows how to
-// handle "sub"-routes by passing them in a `routes`
-// prop to the component it renders.
 function RouteWithSubRoutes(route) {
   return (
     <Route
@@ -66,7 +49,7 @@ function RouteWithSubRoutes(route) {
   );
 }
 
-function Sandwiches() {
+export function Sandwiches() {
   return <h2>Sandwiches</h2>;
 }
 
@@ -101,6 +84,6 @@ function Cart() {
 }
 
 ReactDOM.render(
-  <RouteConfigExample />,
+  <App />,
   document.getElementById('root')
 );
