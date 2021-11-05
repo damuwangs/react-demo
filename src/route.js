@@ -4,10 +4,14 @@
  * @Date: 2021-11-04 16:12:52
  */
 import { Route } from "react-router-dom";
-import { Test, Tacos, Bus, Cart, Sandwiches} from "./test";
+import { Test, Tacos, Bus, Cart, Sandwiches, Home} from "./test";
 
 
 const routes = [
+    {
+        path: "/Home",
+        component: Home
+    },    
     {
         path: "/test",
         component: Test
@@ -29,9 +33,14 @@ const routes = [
     {
         path: "/sandwiches",
         component: Sandwiches
-    },
+    }
 ]
 
+/**
+ * @description: 展示子路由
+ * @param {*}
+ * @return {*}
+ */
 const RouteWithSubRoutes = (route) => {
     return (
         <Route

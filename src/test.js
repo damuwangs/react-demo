@@ -8,6 +8,12 @@ import ThemeButton from "./themed-button"
  * @Autor: 王成阳
  * @Date: 2021-10-28 15:05:11
  */
+function Home() {
+	return(
+		<div>我是首页</div>
+	)
+}
+
 class Test extends react.Component {
 	constructor(props) {
 		super(props)
@@ -66,6 +72,7 @@ function Sandwiches() {
 }
 
 export {
+	Home,
 	Test,
 	Tacos,
 	Bus,
