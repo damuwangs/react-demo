@@ -8,6 +8,7 @@ import { Test, Tacos, Bus, Cart, Sandwiches, Home} from "./test";
 
 
 const routes = [
+    //首页
     {
         path: "/Home",
         component: Home
