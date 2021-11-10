@@ -1,6 +1,6 @@
 import react from "react"
 import { Link, Switch } from "react-router-dom"
-import { RouteWithSubRoutes } from "./route"
+import { RouteWithSubRoutes } from "../config/route"
 import { ThemeContext, themes } from "./theme-context"
 import ThemeButton from "./themed-button"
 /*

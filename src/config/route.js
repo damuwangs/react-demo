@@ -4,12 +4,12 @@
  * @Date: 2021-11-04 16:12:52
  */
 import { Route } from "react-router-dom";
-import { Test, Tacos, Bus, Cart, Sandwiches, Home} from "./test";
+import { Test, Tacos, Bus, Cart, Sandwiches, Home} from "@/components/test";
 
 
 const routes = [
     {
-        path: "/Home",
+        path: "/home",
         component: Home
     },    
     {
