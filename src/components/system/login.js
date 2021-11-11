@@ -5,17 +5,19 @@
  */
 import { Form, Input, Button, Checkbox } from 'antd';
 import '@/css/system/login.css'
-import { withRouter } from 'react-router-dom';
 import React from 'react';
 
 class Login extends React.Component{
     onFinish = (values) => {
         console.log('Success:', values);
-    };
+        return (
+            this.props.history.push('/home')
+        )
+    }
 
     onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
-    };
+    }
 
     render(){
         return (
@@ -59,4 +61,4 @@ class Login extends React.Component{
     }
 }
 
-export default withRouter(Login)
+export default Login

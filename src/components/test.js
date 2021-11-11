@@ -1,6 +1,5 @@
 import react from "react"
-import { Link, Switch } from "react-router-dom"
-import { RouteWithSubRoutes } from "../config/route"
+import { Link} from "react-router-dom"
 import { ThemeContext, themes } from "./theme-context"
 import ThemeButton from "./themed-button"
 /*
@@ -49,12 +48,6 @@ function Tacos({ routes }) {
                     <Link to="/tacos/cart">Cart</Link>
                 </li>
             </ul>
-
-            <Switch>
-                {routes.map((route, i) => (
-                    <RouteWithSubRoutes key={i} {...route} />
-                    ))}
-            </Switch>
         </div>
     );
 }

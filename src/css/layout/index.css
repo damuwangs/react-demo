@@ -1,0 +1,40 @@
+.trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+  
+.trigger:hover {
+    color: #1890ff;
+}
+  
+.logo {
+    margin: 16px;
+	text-align: center;
+}
+  
+.site-layout .site-layout-background {
+    background: #fff;
+}
+
+.ant-layout{
+    height: 100vh;
+}
+
+.head{
+	display:flex;
+    background:#fff;
+    align-items: center;
+	justify-content: space-between;
+}
+
+.headItem{
+	display:flex;
+	align-items: center;
+}
+
+.dropName{
+	padding-right: 20px;
+}
