@@ -4,7 +4,7 @@
 * @Date: 2021-11-11 11:28:34
 */
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Test, Tacos, Bus, Cart, Sandwiches, Home } from "@/components/test";
+import { Test, Tacos, Bus, Cart, Sandwiches, Home } from "@/components/test/test";
 import { Login, NotFund} from '@/components/system/index';
 import { SLayOut } from "@/components/layout";
 
