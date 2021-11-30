@@ -80,6 +80,12 @@ class SLayOut extends React.Component {
 						<Menu.Item key="7" icon={<MinusOutlined />}>
 							<Link to="/notfund">NotFund</Link>
 						</Menu.Item>
+						<Menu.Item key="8" icon={<MinusOutlined />}>
+							<Link to="/hoc">Hoc</Link>
+						</Menu.Item>
+						<Menu.Item key="9" icon={<MinusOutlined />}>
+							<Link to="/refs">refs</Link>
+						</Menu.Item>
 					</Menu>
 					{/* 左侧menu - END*/}
 				</Sider>
