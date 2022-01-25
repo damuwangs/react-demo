@@ -1,10 +1,10 @@
+/*
+* @Description: 
+* @Autor: 王成阳
+* @Date: 2021-11-24 09:07:43
+*/
 import { Component } from "react"
 
-/*
- * @Description: 
- * @Autor: 王成阳
- * @Date: 2021-11-24 09:07:43
- */
 function getDisplayName(component) {
     return component.displayName || component.name || 'Component';
 }

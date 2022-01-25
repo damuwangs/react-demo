@@ -1,11 +1,11 @@
+/*
+* @Description: 
+* @Autor: 王成阳
+* @Date: 2021-11-30 10:26:52
+*/
 import React from "react";
 
-/*
- * @Description: 
- * @Autor: 王成阳
- * @Date: 2021-11-30 10:26:52
- */
-class refs extends React.Component{
+class Refs extends React.Component{
     render(){
         return(
             <div>
@@ -64,5 +64,5 @@ class AutoFocusTextInput extends React.Component{
 }
 
 export {
-    refs
+    Refs
 }

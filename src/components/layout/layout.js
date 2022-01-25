@@ -52,7 +52,6 @@ class SLayOut extends React.Component {
 	render() {
 		return (
 			<Layout>
-				
 				<Sider trigger={null} collapsible collapsed={this.state.collapsed}>
 					{/* logo */}
 					<div className="logo" >
@@ -78,13 +77,19 @@ class SLayOut extends React.Component {
 							<Link to="/sandwiches">sandwiches</Link>
 						</Menu.Item>
 						<Menu.Item key="7" icon={<MinusOutlined />}>
-							<Link to="/notfund">NotFund</Link>
+							<Link to="/notfund">notFund</Link>
 						</Menu.Item>
 						<Menu.Item key="8" icon={<MinusOutlined />}>
-							<Link to="/hoc">Hoc</Link>
+							<Link to="/hoc">hoc</Link>
 						</Menu.Item>
 						<Menu.Item key="9" icon={<MinusOutlined />}>
 							<Link to="/refs">refs</Link>
+						</Menu.Item>
+						<Menu.Item key="10" icon={<MinusOutlined />}>
+							<Link to="/renderProps">renderProps</Link>
+						</Menu.Item>
+						<Menu.Item key="11" icon={<MinusOutlined />}>
+							<Link to="/hook">hook</Link>
 						</Menu.Item>
 					</Menu>
 					{/* 左侧menu - END*/}

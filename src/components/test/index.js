@@ -5,11 +5,14 @@
  */
 import {Home,Test,Tacos,Bus,Cart,Sandwiches} from "./test";// test
 import {HocDemo} from "./hoc";// 高阶组件
-import {refs} from "./refs";
-
+import {Refs} from "./refs";
+import { RenderProps } from "./renderProps";
+import { Hook } from "./hook";
 
 export {
     Home,Test,Tacos,Bus,Cart,Sandwiches,
     HocDemo,
-    refs
+    Refs,
+    RenderProps,
+    Hook
 }

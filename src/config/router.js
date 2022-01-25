@@ -6,7 +6,7 @@
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Login, NotFund} from '@/components/system';
 import { SLayOut } from "@/components/layout";
-import { Test, Tacos, Bus, Cart, Sandwiches, Home, HocDemo, refs } from "@/components/test";
+import { Test, Tacos, Bus, Cart, Sandwiches, Home, HocDemo, Refs, RenderProps, Hook } from "@/components/test";
 
 /**
  * @description: 系统菜单路由
@@ -39,7 +39,9 @@ function ContentRouter() {
                 <Route path="/tacos" component={Tacos}/>
                 <Route path="/sandwiches" component={Sandwiches} /> 
                 <Route path="/hoc" component={HocDemo} /> 
-                <Route path="/refs" component={refs} /> 
+                <Route path="/refs" component={Refs} /> 
+                <Route path="/renderProps" component={RenderProps} /> 
+                <Route path="/hook" component={Hook} /> 
                 <Route path="*" component={NotFund} />
             </Switch>
             <Route path="/tacos/bus" component={Bus} />
@@ -50,5 +52,5 @@ function ContentRouter() {
 
 export {
     SysRouter,
-    ContentRouter
+    ContentRouter,
 } 

@@ -1,12 +1,13 @@
+/*
+* @Description: 
+* @Autor: 王成阳
+* @Date: 2021-10-28 15:05:11
+*/
 import react from "react"
 import { Link} from "react-router-dom"
 import { ThemeContext, themes } from "./theme-context"
 import ThemeButton from "./themed-button"
-/*
- * @Description: 
- * @Autor: 王成阳
- * @Date: 2021-10-28 15:05:11
- */
+
 function Home() {
 	return(
 		<div>我是首页</div>
